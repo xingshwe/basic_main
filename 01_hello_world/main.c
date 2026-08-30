@@ -30,6 +30,24 @@ int main() {
     printf("UTC time: ");
     timer = gmtime(&tv.tv_sec);
     printf("%d %d %d\n",timer->tm_hour,timer->tm_min,timer->tm_sec);
-    
+
+
+    //歌曲时间已播放100秒
+    //当前时间为0秒
+    //计算歌曲开始播放的时间
+    unsigned int song_time = 100;
+    unsigned int curr_time = 10;
+    unsigned int song_start_time = 0;
+
+    /*方案1*/
+    // song_start_time = 0 - song_time;
+    // song_start_time = 30 - song_start_time;
+    // printf("song_start_time %u\n", song_start_time);
+
+    /*方案2*/
+    song_start_time = curr_time - song_time;
+    printf("song_start_time %u\n",30 - song_start_time);
+
+
     return 0;
 }
